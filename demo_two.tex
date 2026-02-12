@@ -1,7 +1,9 @@
 \documentclass{article}
 \usepackage{tikz}
 \usepackage{graphicx}
+\usepackage{lipsum}
 \begin{document}
+\lipsum[1-2]
 \begin{figure}[htb]
     \centering
 \begin{tikzpicture}
@@ -9,8 +11,9 @@
     \draw (0,0) -- (0,4) node[anchor=south east] {y axis};
     \draw (0,0) -- (3,3) node[anchor=south  west] {z axis};
 \end{tikzpicture}
+\caption{axis}
 \end{figure}
-
+\lipsum[6-10]
 \begin{figure}[htb]
    \centering
  \begin{tikzpicture}
