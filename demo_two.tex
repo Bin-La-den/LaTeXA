@@ -1,16 +1,25 @@
-\documentclass{standalone}
+\documentclass{article}
 \usepackage{tikz}
+\usepackage{graphicx}
 \begin{document}
+\begin{figure}[htb]
+    \centering
 \begin{tikzpicture}
     \draw (0,0) -- (4,0) node[anchor=north west] {x axis};
     \draw (0,0) -- (0,4) node[anchor=south east] {y axis};
     \draw (0,0) -- (3,3) node[anchor=south  west] {z axis};
 \end{tikzpicture}
+\end{figure}
 
-\begin{tikzpicture}
-\draw (-1.5,0) -- (1.5,0);
-\draw (0,-1.5) -- (0,1.5);
-\draw (-1,0) .. controls (-1,0.555) and (-0.555,1) .. (0,1)
-.. controls (0.555,1) and (1,0.555) .. (1,0);
+\begin{figure}[htb]
+   \centering
+ \begin{tikzpicture}
+    \draw (-1.5,0) -- (1.5,0);
+    \draw (0,-1.5) -- (0,1.5);
+    \draw (-1,0) .. controls (-1,0.555) and (-0.555,1) .. (0,1)
+    .. controls (0.555,1) and (1,0.555) .. (1,0);
 \end{tikzpicture}
+   \caption{A simple 2D plot of a function.}
+   \label{fig:automaton}
+\end{figure}
 \end{document}
