@@ -6,4 +6,11 @@
     \draw (0,0) -- (0,4) node[anchor=south east] {y axis};
     \draw (0,0) -- (3,3) node[anchor=south  west] {z axis};
 \end{tikzpicture}
+
+\begin{tikzpicture}
+\draw (-1.5,0) -- (1.5,0);
+\draw (0,-1.5) -- (0,1.5);
+\draw (-1,0) .. controls (-1,0.555) and (-0.555,1) .. (0,1)
+.. controls (0.555,1) and (1,0.555) .. (1,0);
+\end{tikzpicture}
 \end{document}
