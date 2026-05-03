@@ -1,4 +1,4 @@
-        \documentclass{article}
+\documentclass{article}
 \usepackage{ctex}
 \usepackage{tikz}
 \usepackage{subcaption}
@@ -131,4 +131,101 @@
 \begin{equation}
     \lim_{x \to \infty} \exp(-x) = 0
 \end{equation}
+
+\section{更多 TikZ 图形示例}
+
+以下展示更多使用 TikZ 绘制的图形：
+
+\begin{figure}[htb]
+    \centering
+    \begin{subcaptionblock}{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.5]
+            \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (2.5,2.5);
+            \filldraw[fill=blue!30, draw=blue, thick] (0,0) -- (2,0) -- (1,1.732) -- cycle;
+            \filldraw[fill=red!30, draw=red, thick] (0,0) circle [radius=0.5];
+            \filldraw[fill=yellow!50, draw=orange, thick] (1.5,1.5) rectangle (2.5,2.5);
+            \node at (1,-0.3) {三角形};
+            \node at (0,-0.3) {圆};
+            \node at (2,2.8) {矩形};
+        \end{tikzpicture}
+        \caption{基本几何图形}
+    \end{subcaptionblock}%
+    \begin{subcaptionblock}{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.5]
+            \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (2.5,2.5);
+            \draw[->, thick] (0,0) -- (2.2,0) node[right] {$x$};
+            \draw[->, thick] (0,0) -- (0,2.2) node[above] {$y$};
+            \draw[domain=0:2, smooth, variable=\x, blue, thick] plot ({\x}, {0.5*\x*\x});
+            \draw[domain=0:2, smooth, variable=\x, red, thick] plot ({\x}, {2*\x});
+            \node at (1.5,1.2) {$y=x^2/2$};
+            \node at (1.5,0.3) {$y=2x$};
+        \end{tikzpicture}
+        \caption{函数曲线}
+    \end{subcaptionblock}%
+    \begin{subcaptionblock}{0.3\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=1.5]
+            \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (2.5,2.5);
+            \draw[fill=green!30, draw=green!50!black, thick] (0,0) -- (0,2) arc [start angle=180, end angle=90, radius=2] -- cycle;
+            \draw[fill=cyan!30, draw=cyan!50!black, thick] (0,0) -- (2,0) arc [start angle=0, end angle=90, radius=2] -- cycle;
+            \draw[dashed] (0,0) -- (2,2);
+            \node at (0.3,1.2) {A};
+            \node at (1.2,0.3) {B};
+        \end{tikzpicture}
+        \caption{扇形与弧线}
+    \end{subcaptionblock}
+    \caption{TikZ 图形综合示例一}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \begin{subcaptionblock}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=2]
+            \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (2.5,2.5);
+            \foreach \x in {0,0.5,...,2}
+                \foreach \y in {0,0.5,...,2}
+                    \filldraw[fill=blue!20!white, draw=blue] (\x,\y) circle [radius=1.5pt];
+            \draw[thick, ->] (0,0) -- (2.5,0) node[right] {$x$};
+            \draw[thick, ->] (0,0) -- (0,2.5) node[above] {$y$};
+        \end{tikzpicture}
+        \caption{网格点阵}
+    \end{subcaptionblock}%
+    \begin{subcaptionblock}{0.45\linewidth}
+        \centering
+        \begin{tikzpicture}[scale=2]
+            \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (2.5,2.5);
+            \draw[fill=purple!20, draw=purple, thick] (0,0) -- (1,2) -- (2,0) -- cycle;
+            \draw[fill=purple!20, draw=purple, thick] (0,0) -- (1,2) -- (2,0) -- cycle;
+            \draw[fill=orange!30, draw=orange, thick] (0.5,0.5) -- (1,1.5) -- (1.5,0.5) -- cycle;
+            \draw[fill=orange!30, draw=orange, thick] (0.5,0.5) -- (1,1.5) -- (1.5,0.5) -- cycle;
+            \draw[dashed, gray] (1,0) -- (1,2);
+            \draw[dashed, gray] (0,1) -- (2,1);
+        \end{tikzpicture}
+        \caption{相似三角形}
+    \end{subcaptionblock}
+    \caption{TikZ 图形综合示例二}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=2.5]
+        \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (3.5,2.5);
+        \draw[fill=yellow!30, draw=orange, thick] (0,0) circle [radius=1];
+        \draw[fill=blue!30, draw=blue, thick] (2,0) circle [radius=0.8];
+        \draw[fill=red!30, draw=red, thick] (1,1.5) circle [radius=0.6];
+        \draw[fill=green!30, draw=green!50!black, thick] (2.5,1.5) circle [radius=0.5];
+        \draw[<->, thick] (0,0) -- (2,0) node[midway, below] {$d$};
+        \draw[<->, thick] (0,0) -- (1,1.5) node[midway, above left] {$r_1$};
+        \draw[<->, thick] (2,0) -- (1,1.5) node[midway, above right] {$r_2$};
+        \node at (0,0) {A};
+        \node at (2,0) {B};
+        \node at (1,1.5) {C};
+        \node at (2.5,1.5) {D};
+    \end{tikzpicture}
+    \caption{圆与距离关系}
+\end{figure}
+
 \end{document}
