@@ -228,4 +228,37 @@
     \caption{圆与距离关系}
 \end{figure}
 
+\begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}[scale=2.0]
+        % 绘制网格
+        \draw[gray!50, very thin, step=0.5] (-0.5,-1.5) grid (7.5,1.5);
+        % 绘制坐标轴
+        \draw[->, thick] (-0.5,0) -- (7.5,0) node[right] {$x$};
+        \draw[->, thick] (0,-1.5) -- (0,1.5) node[above] {$y$};
+        % 刻度标签
+        \foreach \x in {1,2,...,6}
+            \draw (\x,0) -- (\x,-0.05) node[below] {$\x$};
+        \foreach \y in {-1,1}
+            \draw (0,\y) -- (-0.05,\y) node[left] {$\y$};
+        % 绘制正弦曲线 y = sin(x)
+        \draw[domain=0:2*pi, smooth, variable=\x, blue, thick] plot ({\x}, {sin(\x r)});
+        % 绘制余弦曲线 y = cos(x)
+        \draw[domain=0:2*pi, smooth, variable=\x, red, thick] plot ({\x}, {cos(\x r)});
+        % 图例（放在图形内部右上角空白区域）
+        \draw[blue, thick] (5.2,1.2) -- (5.8,1.2) node[right] {$\sin x$};
+        \draw[red, thick] (5.2,0.9) -- (5.8,0.9) node[right] {$\cos x$};
+        % 标记特殊点
+        \filldraw[blue] (pi/2,1) circle [radius=1.5pt] node[above right] {$(\frac{\pi}{2},1)$};
+        \filldraw[blue] (pi,0) circle [radius=1.5pt] node[below] {$(\pi,0)$};
+        \filldraw[blue] (3*pi/2,-1) circle [radius=1.5pt] node[below right] {$(\frac{3\pi}{2},-1)$};
+        \filldraw[red] (0,1) circle [radius=1.5pt] node[left] {$(0,1)$};
+        \filldraw[red] (pi/2,0) circle [radius=1.5pt] node[above right] {$(\frac{\pi}{2},0)$};
+        \filldraw[red] (pi,-1) circle [radius=1.5pt] node[below] {$(\pi,-1)$};
+        \filldraw[red] (3*pi/2,0) circle [radius=1.5pt] node[below right] {$(\frac{3\pi}{2},0)$};
+        \filldraw[red] (2*pi,1) circle [radius=1.5pt] node[above] {$(2\pi,1)$};
+    \end{tikzpicture}
+    \caption{正弦函数 $y=\sin x$ 与余弦函数 $y=\cos x$ 的图像}
+\end{figure}
+
 \end{document}
