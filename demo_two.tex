@@ -158,9 +158,9 @@
             \draw[->, thick] (0,0) -- (2.2,0) node[right] {$x$};
             \draw[->, thick] (0,0) -- (0,2.2) node[above] {$y$};
             \draw[domain=0:2, smooth, variable=\x, blue, thick] plot ({\x}, {0.5*\x*\x});
-            \draw[domain=0:2, smooth, variable=\x, red, thick] plot ({\x}, {2*\x});
+            \draw[domain=0:2, smooth, variable=\x, red, thick] plot ({\x}, {0.5*\x});
             \node at (1.5,1.2) {$y=x^2/2$};
-            \node at (1.5,0.3) {$y=2x$};
+            \node at (1.5,0.3) {$y=0.5x$};
         \end{tikzpicture}
         \caption{函数曲线}
     \end{subcaptionblock}%
@@ -168,7 +168,7 @@
         \centering
         \begin{tikzpicture}[scale=1.5]
             \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (2.5,2.5);
-            \draw[fill=green!30, draw=green!50!black, thick] (0,0) -- (0,2) arc [start angle=180, end angle=90, radius=2] -- cycle;
+            % 绘制扇形
             \draw[fill=cyan!30, draw=cyan!50!black, thick] (0,0) -- (2,0) arc [start angle=0, end angle=90, radius=2] -- cycle;
             \draw[dashed] (0,0) -- (2,2);
             \node at (0.3,1.2) {A};
@@ -213,17 +213,15 @@
     \centering
     \begin{tikzpicture}[scale=2.5]
         \draw[gray!50, very thin, step=0.5] (-0.5,-0.5) grid (3.5,2.5);
-        \draw[fill=yellow!30, draw=orange, thick] (0,0) circle [radius=1];
-        \draw[fill=blue!30, draw=blue, thick] (2,0) circle [radius=0.8];
-        \draw[fill=red!30, draw=red, thick] (1,1.5) circle [radius=0.6];
-        \draw[fill=green!30, draw=green!50!black, thick] (2.5,1.5) circle [radius=0.5];
-        \draw[<->, thick] (0,0) -- (2,0) node[midway, below] {$d$};
-        \draw[<->, thick] (0,0) -- (1,1.5) node[midway, above left] {$r_1$};
-        \draw[<->, thick] (2,0) -- (1,1.5) node[midway, above right] {$r_2$};
-        \node at (0,0) {A};
-        \node at (2,0) {B};
-        \node at (1,1.5) {C};
-        \node at (2.5,1.5) {D};
+        \draw[fill=yellow!30, draw=orange, thick] (0,0) circle [radius=0.5];
+        \draw[fill=blue!30, draw=blue, thick] (2,0) circle [radius=0.5];
+        \draw[fill=red!30, draw=red, thick] (3,2) circle [radius=0.5];
+        \draw[-, thick] (0,0) -- (2,0) node[midway, below] {$d$};
+        \draw[-, thick] (0,0) -- (3,2) node[midway, above left] {$r_1$};
+        \draw[-, thick] (2,0) -- (3,2) node[midway, above left] {$r_2$};
+        \node at (0,-0.1) {A};
+        \node at (2.1,0) {B};
+        \node at (3,2.1) {C};
     \end{tikzpicture}
     \caption{圆与距离关系}
 \end{figure}
@@ -249,16 +247,16 @@
         \draw[blue, thick] (5.2,1.2) -- (5.8,1.2) node[right] {$\sin x$};
         \draw[red, thick] (5.2,0.9) -- (5.8,0.9) node[right] {$\cos x$};
         % 标记特殊点
-        \filldraw[blue] (pi/2,1) circle [radius=1.5pt] node[above right] {$(\frac{\pi}{2},1)$};
-        \filldraw[blue] (pi,0) circle [radius=1.5pt] node[below] {$(\pi,0)$};
-        \filldraw[blue] (3*pi/2,-1) circle [radius=1.5pt] node[below right] {$(\frac{3\pi}{2},-1)$};
-        \filldraw[red] (0,1) circle [radius=1.5pt] node[left] {$(0,1)$};
-        \filldraw[red] (pi/2,0) circle [radius=1.5pt] node[above right] {$(\frac{\pi}{2},0)$};
+        \filldraw[blue] (pi/2,1) circle [radius=1.5pt] node[above left] {$(\frac{\pi}{2},1)$};
+        \filldraw[blue] (pi,0) circle [radius=1.5pt] node[above right] {$(\pi,0)$};
+        \filldraw[blue] (3*pi/2,-1) circle [radius=1.5pt] node[below left] {$(\frac{3\pi}{2},-1)$};
+        \filldraw[red] (0,1) circle [radius=1.5pt] node[above right] {$(0,1)$};
+        \filldraw[red] (pi/2,0) circle [radius=1.5pt] node[below left] {$(\frac{\pi}{2},0)$};
         \filldraw[red] (pi,-1) circle [radius=1.5pt] node[below] {$(\pi,-1)$};
-        \filldraw[red] (3*pi/2,0) circle [radius=1.5pt] node[below right] {$(\frac{3\pi}{2},0)$};
-        \filldraw[red] (2*pi,1) circle [radius=1.5pt] node[above] {$(2\pi,1)$};
+        \filldraw[red] (3*pi/2,0) circle [radius=1.5pt] node[above left] {$(\frac{3\pi}{2},0)$};
+        \filldraw[red] (2*pi,1) circle [radius=1.5pt] node[below right] {$(2\pi,1)$};
     \end{tikzpicture}
     \caption{正弦函数 $y=\sin x$ 与余弦函数 $y=\cos x$ 的图像}
 \end{figure}
-
+    
 \end{document}
