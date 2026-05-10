@@ -1,6 +1,10 @@
 \documentclass{article}
 \usepackage{ctex}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{lmodern}
 \usepackage{tikz}
+\usepackage{amsmath}
 \usepackage{subcaption}
 \usepackage{mwe}
 \usepackage{lipsum}
@@ -132,6 +136,10 @@
     \lim_{x \to \infty} \exp(-x) = 0
 \end{equation}
 
+\begin{equation}
+    \frac{(\tau h-\tau p-\tau e)P}{ts}
+\end{equation}
+
 \section{更多 TikZ 图形示例}
 
 以下展示更多使用 TikZ 绘制的图形：
@@ -258,5 +266,4 @@
     \end{tikzpicture}
     \caption{正弦函数 $y=\sin x$ 与余弦函数 $y=\cos x$ 的图像}
 \end{figure}
-    
 \end{document}
