@@ -8,6 +8,8 @@
 \usepackage{subcaption}
 \usepackage{mwe}
 \usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \usepackage{geometry}
 \geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
 \pagestyle{empty}
@@ -266,4 +268,25 @@
     \end{tikzpicture}
     \caption{正弦函数 $y=\sin x$ 与余弦函数 $y=\cos x$ 的图像}
 \end{figure}
+
+\section{附录：三线表示例}
+
+以下展示一张标准的三线表：
+
+\begin{table}[htb]
+    \centering
+    \captionsetup{skip=3pt}
+    \caption{某产品在不同条件下的产量对比}
+    \begin{tabularx}{\textwidth}{*{5}{X}}
+        \toprule
+        组别 & 温度 ($^\circ$C) & 压力 (MPa) & 产量 (kg) & 收率 (\%) \\
+        \midrule
+        A组 & 25  & 0.5  & 120.5 & 85.3 \\
+        B组 & 30  & 0.8  & 145.2 & 91.7 \\
+        C组 & 35  & 1.0  & 138.6 & 88.4 \\
+        D组 & 40  & 1.2  & 152.0 & 93.1 \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
 \end{document}
