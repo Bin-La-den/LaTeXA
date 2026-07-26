@@ -1,0 +1,24 @@
+\documentclass[t,linespread=1.2]{ctexbeamer}
+
+\usepackage[size=a4,orientation=portrait,scale=1.4]{beamerposter}
+\usepackage{lipsum}
+\usetheme{TianQing}
+% 可以把zhkai,zhfs更改成自己喜欢的美术字体、书法字体等
+% \setCJKfamilyfont{zhkai}{STXingkai}  % Win有
+% \setCJKfamilyfont{zhkai}{Xingkai SC}  % Mac有
+% \setCJKfamilyfont{zhkai}{鸿雷板书简体-正式版.otf}[Path=fonts/] % 自行下载
+% \setCJKfamilyfont{zhfs}{ZhuqueFangsong-Regular.ttf}[Path=fonts/] % 自行下载
+
+% 幻灯片->海报需要的一些改动
+\setbeamerfont{frametitle}{size=\Huge}
+\setbeamerfont{framesubtitle}{size=\large}
+\setbeamerfont{block title}{size=\Large}
+% \setlength{\TQTopDecoWidth}{0.5\paperwidth}
+\setlength{\TQBottomDecoWidth}{0.2\paperwidth}
+% \renewcommand{\TQTopDecoOpacity}{0.3}
+% \renewcommand{\TQBottomDecoOpacity}{0.45}
+\begin{document}
+\begin{frame}
+    \lipsum[1-2]
+\end{frame}
+\end{document}
