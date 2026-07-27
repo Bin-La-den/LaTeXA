@@ -21,3 +21,5 @@
 *.xdv
 *.dvi
 *.png
+/.vscode/
+.claude/
