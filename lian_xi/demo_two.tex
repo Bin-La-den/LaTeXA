@@ -81,6 +81,14 @@
 \end{tikzpicture}
 
 \begin{figure}
+    \begin{tikzpicture}
+        \useasboundingbox[draw=blue, fill=yellow!20, line width=1pt] (0,0) rectangle (16,4);
+        \shadedraw[inner color=brown, outer color=black, draw=red, line width=2pt] (8.5,1) rectangle +(2,2);
+        \node at (2,2) {你好，世界！};
+    \end{tikzpicture}
+\end{figure}
+
+\begin{figure}
     \centering
     \begin{subcaptionblock}{0.3\linewidth}
         \centering
